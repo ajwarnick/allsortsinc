@@ -7,9 +7,9 @@ window.onscroll = function() {
     const nav = document.getElementById("header");
 
     if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    nav.style.height = "10vh";
+        document.body.classList.add("scolled");
     } else {
-    nav.style.height = "25vh";
+        document.body.classList.remove("scolled");
     }
 
 };
