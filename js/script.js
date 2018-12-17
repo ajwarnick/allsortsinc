@@ -1,3 +1,8 @@
+import offcanvas from './_off-canvas';
+
+offcanvas();
+
+
 window.onscroll = function() {
     const nav = document.getElementById("header");
 
