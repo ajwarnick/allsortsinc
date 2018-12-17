@@ -7,103 +7,132 @@
     <title>All Sorts Inc Hompage</title>
     <link rel="stylesheet" type="text/css" media="screen" href="/scss/style.scss" />
 </head>
-<body class="">
-    <header class="nav_bar" id="header">
-        <a href="#"><img src="/img/logo.PNG" alt="All Sorts Inc Logo"></a>
-        <span class="hamburger"></span>
-    </header>
-    <main>
-
-        <div class="container ">
-            <div class="menulinks trigger">
-                <a>Portfolio</a>
-            </div>
-            <div class="griddropdown">
-                <div class="item">
-                        <a href="#"><img src="https://picsum.photos/300/300?image=50" alt="project 1"></a>
-                </div>
-                <div class="item">
-                        <a href="#"><img src="https://picsum.photos/300/300?image=61" alt="project 2"></a>
-                </div>
-                <div class="item">
-                        <a href="#"><img src="https://picsum.photos/300/300?image=73" alt="project 3"></a>
-                </div>
-                <div class="item">
-                        <a href="#"><img src="https://picsum.photos/300/300?image=94" alt="project 4"></a>
-                </div>
-                <div class="item">
-                        <a href="#"><img src="https://picsum.photos/300/300?image=235" alt="project 5"></a>
-                </div>
-                <div class="item">
-                        <a href="#"><img src="https://picsum.photos/300/300?image=556" alt="project 6"></a>
-                </div>
-                <div class="item">
-                        <a href="#"><img src="https://picsum.photos/300/300?image=17" alt="project 2"></a>
-                </div>
-                <div class="item">
-                        <a href="#"><img src="https://picsum.photos/300/300?image=448" alt="project 4"></a>
-                </div>
-            </div>
-        </div>
-        
+<body class="offcanvas--wrapper">
 
 
-        <div class="container">
-            <div class="menulinks trigger">
-                <a>Rental</a>
+    <div class="offcanvas--canvas offcanvas--bottom--sidebar">
+            <div class="offcanvas--left--sidebar">
+                <a href="#" class="close-nav">close</a>
             </div>
-            <div class="linkdropdown">
-                <div class="item">
-                    <a class="test" href="#">Floors</a>
-                </div>
-                <div class="item">
-                    <a class="test" href="#">Walls</a>
-                </div>
-                <div class="item">
-                    <a class="test" href="#">Shapes</a>
-                </div>
+            
+            <div class="offcanvas--right--sidebar">
+                <a href="#" class="close-nav">close</a>
             </div>
-        </div>
-        <div class="container">
-            <div class="menulinks trigger">
-                <a>Services</a>
+
+            <div class="offcanvas--top--sidebar">
+                <a href="#" class="close-nav">close</a>
             </div>
-            <div class="griddropdown">
-                <div class="item"><p>Wood</p><a href="#"><img src="https://picsum.photos/300/300?image=20" alt="project 1"></a></div>
-                <div class="item"><p>Plastic</p><a href="#"><img src="https://picsum.photos/300/300?image=21" alt="project 2"></a></div>
-                <div class="item"><p>Metal</p><a href="#"><img src="https://picsum.photos/300/300?image=22" alt="project 3"></a></div>
-                <div class="item"><p>Finish</p><a href="#"><img src="https://picsum.photos/300/300?image=23" alt="project 4"></a></div>
-                <div class="item"><p>CNC</p><a href="#"><img src="https://picsum.photos/300/300?image=24" alt="project 5"></a></div>
-                <div class="item"><p>Fleet</p><a href="#"><img src="https://picsum.photos/300/300?image=25" alt="project 6"></a></div>
-                <div class="item"><p>Fun</p><a href="#"><img src="https://picsum.photos/300/300?image=26" alt="project 4"></a></div>
-                <div class="item"><p>Old</p><a href="#"><img src="https://picsum.photos/300/300?image=27" alt="project 4"></a></div>
+            
+            <div class="offcanvas--bottom--sidebar">
+                <a href="#" class="close-nav">close</a>
             </div>
-        </div>
-        <div class="container">
-            <div class="menulinks trigger">
-                <a>Company</a>
-            </div>
-            <div class="textdropdown">
-                <div class="item">
-                    <p>ALLSORTS INC</p>
-                    <p class="staff">Michael Peterson - Owner<br>michael@allsortsinc.com</p>
-                    <address>133 Sutton Street Brooklyn, NY 11222</address>
-                </div>
-                <div class="item">
-                    <p class="staff">Frank Bevan - Business Manager<br>frank@allsortsinc.com</p>
-                    <p class="contact">P 347-533-8379<br>F 347-533-8193</p>
-                    <p class="staff">Mike McNeil- Lottery Ticket<br>mike@allsortsinc.com</p>
+        <div class="offcanvas--content">
+            <header class="nav_bar" id="header">
+                <a href="#"><img src="/img/logo.PNG" alt="All Sorts Inc Logo"></a>
+                <a href="#" class="hamburger offcanvas--toggle--nav" data-direction="left" id="toggle-left"></a>
+
+                <!--
+                    Exmaple off canvas stuff
+                    <a href="#" class="offcanvas--toggle--nav" data-direction="left" id="toggle-left">Toggle Left</a>
+                    <a href="#" class="offcanvas--toggle--nav" data-direction="right" id="toggle-right">Toggle Right</a>
+                    <a href="#" class="offcanvas--toggle--nav" data-direction="top" id="toggle-top">Toggle Top</a>
+                    <a href="#" class="offcanvas--toggle--nav" data-direction="bottom" id="toggle-bottom">Toggle Bottom</a>
+                -->
+                
+            </header>
+            <main>
+
+                <div class="container ">
+                    <div class="menulinks trigger">
+                        <a>Portfolio</a>
+                    </div>
+                    <div class="griddropdown">
+                        <div class="item">
+                                <a href="#"><img src="https://picsum.photos/300/300?image=50" alt="project 1"></a>
+                        </div>
+                        <div class="item">
+                                <a href="#"><img src="https://picsum.photos/300/300?image=61" alt="project 2"></a>
+                        </div>
+                        <div class="item">
+                                <a href="#"><img src="https://picsum.photos/300/300?image=73" alt="project 3"></a>
+                        </div>
+                        <div class="item">
+                                <a href="#"><img src="https://picsum.photos/300/300?image=94" alt="project 4"></a>
+                        </div>
+                        <div class="item">
+                                <a href="#"><img src="https://picsum.photos/300/300?image=235" alt="project 5"></a>
+                        </div>
+                        <div class="item">
+                                <a href="#"><img src="https://picsum.photos/300/300?image=556" alt="project 6"></a>
+                        </div>
+                        <div class="item">
+                                <a href="#"><img src="https://picsum.photos/300/300?image=17" alt="project 2"></a>
+                        </div>
+                        <div class="item">
+                                <a href="#"><img src="https://picsum.photos/300/300?image=448" alt="project 4"></a>
+                        </div>
+                    </div>
                 </div>
                 
 
-                
-                <div class="map"></div>
-            </div>
-        </div>
-    </main>
-    <footer>
-    </footer>
 
+                <div class="container">
+                    <div class="menulinks trigger">
+                        <a>Rental</a>
+                    </div>
+                    <div class="linkdropdown">
+                        <div class="item">
+                            <a class="test" href="#">Floors</a>
+                        </div>
+                        <div class="item">
+                            <a class="test" href="#">Walls</a>
+                        </div>
+                        <div class="item">
+                            <a class="test" href="#">Shapes</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="menulinks trigger">
+                        <a>Services</a>
+                    </div>
+                    <div class="griddropdown">
+                        <div class="item"><p>Wood</p><a href="#"><img src="https://picsum.photos/300/300?image=20" alt="project 1"></a></div>
+                        <div class="item"><p>Plastic</p><a href="#"><img src="https://picsum.photos/300/300?image=21" alt="project 2"></a></div>
+                        <div class="item"><p>Metal</p><a href="#"><img src="https://picsum.photos/300/300?image=22" alt="project 3"></a></div>
+                        <div class="item"><p>Finish</p><a href="#"><img src="https://picsum.photos/300/300?image=23" alt="project 4"></a></div>
+                        <div class="item"><p>CNC</p><a href="#"><img src="https://picsum.photos/300/300?image=24" alt="project 5"></a></div>
+                        <div class="item"><p>Fleet</p><a href="#"><img src="https://picsum.photos/300/300?image=25" alt="project 6"></a></div>
+                        <div class="item"><p>Fun</p><a href="#"><img src="https://picsum.photos/300/300?image=26" alt="project 4"></a></div>
+                        <div class="item"><p>Old</p><a href="#"><img src="https://picsum.photos/300/300?image=27" alt="project 4"></a></div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="menulinks trigger">
+                        <a>Company</a>
+                    </div>
+                    <div class="textdropdown">
+                        <div class="item">
+                            <p>ALLSORTS INC</p>
+                            <p class="staff">Michael Peterson - Owner<br>michael@allsortsinc.com</p>
+                            <address>133 Sutton Street Brooklyn, NY 11222</address>
+                        </div>
+                        <div class="item">
+                            <p class="staff">Frank Bevan - Business Manager<br>frank@allsortsinc.com</p>
+                            <p class="contact">P 347-533-8379<br>F 347-533-8193</p>
+                            <p class="staff">Mike McNeil- Lottery Ticket<br>mike@allsortsinc.com</p>
+                        </div>
+                        
+
+                        
+                        <div class="map"></div>
+                    </div>
+                </div>
+            </main>
+            <footer>
+            </footer>
+        </div>
+    </div>
     <script src="/js/script.js"></script>
 </body>
 </html>
