@@ -1,0 +1,135 @@
+$leftSidebarSize: 600px;
+$rightSidebarSize: 600px;
+$topSidebarSize: 600px;
+$bottomSidebarSize: 600px;
+
+$background-bottom-color:white;
+$transition:300ms ease all;
+$opacity: .25;
+
+.offcanvas--wrapper {
+  position: relative;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.offcanvas--canvas {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  
+  -webkit-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  
+  -webkit-transition: $transition;
+  transition: $transition;
+ 
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden; 
+  
+  opacity: 1;
+}
+
+.offcanvas--content{
+  min-height: 100vh;
+}
+
+.offcanvas--show--right .offcanvas--canvas {
+  -webkit-transform: translateX($rightSidebarSize * -1);
+  transform: translateX($rightSidebarSize * -1);
+  
+  -webkit-transform: translate3d( ($rightSidebarSize * -1), 0, 0);
+  transform: translate3d( ($rightSidebarSize * -1), 0, 0);
+}
+
+.offcanvas--show--left .offcanvas--canvas {
+  -webkit-transform: translateX($leftSidebarSize);
+  transform: translateX($leftSidebarSize);
+  
+  -webkit-transform: translate3d($leftSidebarSize, 0, 0);
+  transform: translate3d($leftSidebarSize, 0, 0);
+}
+
+.offcanvas--show--top .offcanvas--canvas {
+  -webkit-transform: translateY($topSidebarSize);
+  transform: translateY($topSidebarSize);
+  
+  -webkit-transform: translate3d( 0, $topSidebarSize, 0);
+  transform: translate3d( 0, $topSidebarSize, 0);
+}
+
+.offcanvas--show--bottom .offcanvas--canvas .offcanvas--bottom--sidebar {
+  transform:scaleY(1); 
+}
+
+.offcanvas--show--bottom .offcanvas--canvas{
+  height: 100vh;
+  overflow: hidden;
+}
+
+.offcanvas--show--top{
+  overflow: hidden;
+}
+
+
+.offcanvas--show--top .offcanvas--content{
+  opacity: $opacity;
+}
+
+.offcanvas--show--bottom .offcanvas--content{
+  opacity: $opacity;
+}
+
+.offcanvas--show--right .offcanvas--content{
+  opacity: $opacity;
+}
+
+.offcanvas--show--left .offcanvas--content{
+  opacity: $opacity;
+}
+
+.offcanvas--canvas .offcanvas--top--sidebar{
+  width:100vw;
+  height: $topSidebarSize;
+  position: absolute;
+  top: $topSidebarSize * -1;
+}
+
+
+.offcanvas--canvas .offcanvas--bottom--sidebar {
+  width:100vw;
+  height: $bottomSidebarSize;
+  margin-top: calc(100vh - #{$bottomSidebarSize});
+  position: fixed;
+  transform:scaleY(0); 
+  transform-origin:  bottom;
+  transition:transform 0.3s ease-out;
+  z-index: 100;
+
+  //needs background
+  background-color: $background-bottom-color;
+}
+
+.offcanvas--canvas .offcanvas--left--sidebar {
+  width: $leftSidebarSize;
+  //height: 100%;
+  position: absolute;
+  top: 0;
+  left: $leftSidebarSize * -1;
+}
+
+.offcanvas--canvas .offcanvas--right--sidebar {
+  width: $rightSidebarSize;
+  //height: 100%;
+  position: absolute;
+  top: 0;
+  right: ($rightSidebarSize * -1);
+}
+
+
+.close-nav{
+    
+}
