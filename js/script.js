@@ -1,6 +1,30 @@
 import offcanvas from './_off-canvas';
+import GLightbox from '../node_modules/glightbox/dist/js/glightbox'
 
-offcanvas();
+var main_OffCanvas = offcanvas();
+
+var main_lightbox = GLightbox({
+    selector: 'glightboxTest'
+});
+
+var main2_lightbox = GLightbox({
+    selector: 'glightboxTest2'
+});
+      
+var main3_lightbox = GLightbox({
+    selector: 'glightboxTest3'
+});
+
+var main4_lightbox = GLightbox({
+    selector: 'glightboxTest4'
+});
+
+var glightboxIframe = GLightbox({
+    selector: 'glightboxIframe',
+    height: 900,
+    width: 500
+});
+
 
 
 window.onscroll = function() {

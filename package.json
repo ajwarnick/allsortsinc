@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/ajwarnick/allsortsinc#readme",
   "dependencies": {
+    "glightbox": "^1.0.9",
     "parcel-bundler": "^1.10.3"
   },
   "devDependencies": {
