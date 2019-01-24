@@ -13,7 +13,15 @@ Used Breakpoints
 @media all and (max-width: 768px) { ... } 
 @media all and (max-width: 575px) { ... }
 
+
+$tablet: "(min-width: 768px) and (max-width: 1023px)";
+$desktop: "(min-width: 1024px)";
 */
+
+$sm: "(max-width: 574px)";
+$md: "(min-width: 575px) and (max-width: 767px)";
+$lg: "(min-width: 768px) and (max-width: 990px)";
+$xl: "(min-width: 991px)";
 
 /* -----------------------------------------
             TAGS
@@ -34,6 +42,20 @@ body {
     flex-direction: column;
     justify-content: center;
 
+    /*
+    @media #{$xl} { 
+        background-color: yellow;
+    } 
+    @media #{$lg} { 
+        background-color: green;
+    } 
+    @media #{$md} { 
+        background-color: red;
+    } 
+    @media #{$sm} { 
+        background-color: blue;
+    }
+    */
 }
 
 img{
@@ -48,12 +70,24 @@ a{
 
 }
 
+p{
+
+    &.pad{
+        padding-bottom: 1em;
+        padding-top: 1em;
+    }
+}
+
 /* -----------------------------------------
             CLASSES
 -----------------------------------------*/
 
 .none{
     display:none;
+
+    img{
+        display: none;
+    }
 }
 
 
@@ -115,6 +149,11 @@ $hamburgerThickness: $borderThickness;
 
 
 
+.container{
+    padding-left: 3vw;
+    padding-right: 3vw;
+}
+
 
 .menulinks {
     font-size: 8em;
@@ -122,16 +161,15 @@ $hamburgerThickness: $borderThickness;
     text-transform: uppercase;
     font-weight: bold;
     border: $borderThickness solid $textColor;
-    margin-left: 3vw;
-    margin-right: 3vw;
+    
     margin-bottom: 1vh;
     cursor: pointer;
 
-    @media all and (max-width: 768px) { 
+    @media #{$md} {
         font-size: 6em;
-     } 
-    @media all and (max-width: 575px) { 
-        font-size: 3em;  
+    } 
+    @media #{$sm} {
+        font-size: 3em;
     }
 
 }
@@ -143,49 +181,97 @@ $hamburgerThickness: $borderThickness;
     font-size: 3em;
     font-weight: bold;
 
-    display: flex;
+    display: none;
     flex-wrap: wrap;
-    //margin-left: 3vw;
-    //margin-right: 3vw;
+    width: 70vw;
+    margin: 0 auto;
 
-    @media all and (max-width: 768px) { 
+    box-sizing: border-box;
+ 
+    @media #{$xl} {
+        //width: 100%;
+        width:70%;
+    } 
+    @media #{$lg} {
+        width: 100%;
+    } 
+    @media #{$md} {
+        width: 100%;
         font-size: 3em;
-     } 
-    @media all and (max-width: 575px) { 
-        font-size: 2em; 
+    } 
+    @media #{$sm} {
+        width: 100%;
+        font-size: 2em;
     }
 
+    
+
     .item {
-        /*
-        flex: 1 0 21%;
-        &:not(:nth-child(4n)) {
-            margin-right: 1.5vw;
-        }
-        */
-        margin-right: 1vw;
-        margin-left: 1vw;
-        height: 0;
+        font-size: 0em;
         overflow: hidden;
 
-        @media (max-width: 1199px) { 
-            flex: 1 0 21%;
-            &:not(:nth-child(4n)) {
-                //margin-right: 1.5vw;
+        flex-grow:1;
+        flex-shrink:1;
+        width:20%;
+
+        padding:12px;
+
+        
+
+        @media #{$xl} {
+            width:20%;
+            &:nth-child(4n+1) {  
+                padding-left: 0px;
+            }
+    
+            &:nth-child(4n){
+                padding-right:0px;
             }
         } 
-        @media (max-width: 768px) { 
-            flex: 1 0 48%;
-            &:nth-child(odd) {
-                //margin-right: 1.5vw;
+        @media #{$lg} {
+            width:20%;
+            &:nth-child(4n+1) {  
+                padding-left: 0px;
+            }
+    
+            &:nth-child(4n){
+                padding-right:0px;
             }
         } 
-        @media (max-width: 575px) { 
-            flex: 1 0 48%;
-            &:nth-child(odd) {
-                //margin-right: 1vw;
+        @media #{$md} {
+            width:28%;
+
+            &:nth-child(3n+1) {  
+                padding-left: 0px;
             }
-            &:nth-child(even) {
-                //margin-left: 1vw;
+    
+            &:nth-child(3n){
+                padding-right:0px;
+            }
+        } 
+
+
+        @media #{$sm} {
+            width:40%;
+            
+
+            &:nth-child(odd) {  
+                padding-left: 0px;
+            }
+    
+            &:nth-child(even){
+                padding-right:0px;
+            }
+        }
+        
+
+        .img_link{
+            font-size: 0em;
+            display: block;
+            width: 100%;
+
+            img{
+                width: 100%;
             }
         }
 
@@ -194,9 +280,134 @@ $hamburgerThickness: $borderThickness;
 
 .open{
     .griddropdown{
-        .item{
-            height: auto;
+        display: flex;
+    }
+}
+
+.blockdropdown{
+    display: none;
+    width: 70%;
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    @media #{$md} { 
+        width: 100%;
+    } 
+    @media #{$sm} { 
+        width: 100%;
+    }
+
+    .blocktitle{
+        width: 100%;
+        text-align: center;
+        font-size: 5em;
+        border: $borderThickness solid $textColor;
+        margin-bottom: 1vh;
+
+        box-sizing: border-box;
+        @media #{$md} { 
+            font-size: 3em;
+        } 
+        @media #{$sm} { 
+            font-size: 2em;
         }
+    }
+
+    .pad{
+        font-size: 1.5em;
+
+        @media #{$sm} { 
+            font-size: 1.2em;
+        }
+    }
+
+    .blockitems{
+        width:100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        
+        .item {
+            flex-grow:1;
+            flex-shrink:1;
+
+            width:20%;
+            padding:12px; 
+    
+            @media #{$xl} {
+                width:20%;
+
+                &:nth-child(4n+1) {  
+                    padding-left: 0px;
+                }
+        
+                &:nth-child(4n){
+                    padding-right:0px;
+                }
+            } 
+    
+            @media #{$lg} {
+                width:40%;
+
+                &:nth-child(odd) {  
+                    padding-left: 0px;
+                }
+        
+                &:nth-child(even){
+                    padding-right:0px;
+                }
+            } 
+            @media #{$md} {
+                width:40%;
+    
+                &:nth-child(odd) {  
+                    padding-left: 0px;
+                }
+        
+                &:nth-child(even){
+                    padding-right:0px;
+                }
+            } 
+    
+    
+            @media #{$sm} {
+                width:40%;
+                
+    
+                &:nth-child(odd) {  
+                    padding-left: 0px;
+                }
+        
+                &:nth-child(even){
+                    padding-right:0px;
+                }
+            }
+            
+            
+    
+            .img_link{
+                font-size: 0em;
+                display: block;
+                width: 100%;
+    
+                img{
+                    width: 100%;
+                }
+            }
+
+            p{
+                font-size: 1.3em;
+            }
+    
+        }
+    }
+    
+    
+}
+
+.open{
+    .blockdropdown{
+        display: block;
     }
 }
 
@@ -206,18 +417,26 @@ $hamburgerThickness: $borderThickness;
     margin-right: 3vw;
 
     .item{
-        font-size: 6em;
+        font-size: 5em;
         text-align: center;
         border: $borderThickness solid $textColor;
         text-transform: uppercase;
         font-weight: bold;
-        margin: 0 16vw 1vh 16vw;
+        
 
-        @media all and (max-width: 768px) { 
-            font-size: 4em;
-         } 
-        @media all and (max-width: 575px) { 
-            font-size: 2.5em; 
+        @media #{$xl} {
+            margin: 0 20vw 1vh 20vw;
+        } 
+        @media #{$lg} {
+            margin: 0 10vw 1vh 10vw;
+        } 
+        @media #{$md} {
+            font-size: 3em;
+            margin: 0 10vw 1vh 10vw;
+        } 
+        @media #{$sm} {
+            font-size: 1.8em; 
+            margin: 0 20vw 1vh 20vw;
         }
     }
 }
@@ -235,15 +454,28 @@ $hamburgerThickness: $borderThickness;
     font-weight: normal;
     font-size: .8em;
 
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     margin-left: 3vw;
     margin-right: 3vw;
 
     .item {
         width: 50%;
-        height: 0;
+        height: auto;
         overflow: hidden;
+    }
+
+    @media #{$xl} { 
+        font-size: 2.8em;
+    } 
+    @media #{$lg} { 
+        font-size: 1.8em;
+    } 
+    @media #{$md} { 
+        font-size: 1.2em;
+    } 
+    @media #{$sm} { 
+        font-size: 1em;
     }
 
 
@@ -251,18 +483,22 @@ $hamburgerThickness: $borderThickness;
 
 .open{
     .textdropdown{
-        .item{
-            height: auto;
-        }
+        display: flex;
     }
 }
 
 .map {
     border: $borderThickness solid $textColor;
     width: 100%;
-    height: 30vw; /* change to auto */
+    height: auto; /* change to auto */
     margin: 0 auto;
-    grid-column: 1/3;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    img{
+        width: 100%;
+    }
+    
 }
 
 
