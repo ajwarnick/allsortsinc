@@ -13,15 +13,16 @@ Used Breakpoints
 @media all and (max-width: 768px) { ... } 
 @media all and (max-width: 575px) { ... }
 
+900px
 
 $tablet: "(min-width: 768px) and (max-width: 1023px)";
 $desktop: "(min-width: 1024px)";
 */
 
-$sm: "(max-width: 574px)";
-$md: "(min-width: 575px) and (max-width: 767px)";
-$lg: "(min-width: 768px) and (max-width: 990px)";
-$xl: "(min-width: 991px)";
+$sm: "(max-width: 599px)";
+$md: "(min-width: 600px) and (max-width: 900px)";
+$lg: "(min-width: 901px) and (max-width: 1399px)";
+$xl: "(min-width: 1400px)";
 
 /* -----------------------------------------
             TAGS
@@ -101,16 +102,35 @@ p{
     position: -webkit-sticky;
     top:0;
     transition: height 0.5s ease;
+    display: flex;
+    /* flex-direction: column;*/
+    align-items: center; 
+    /* justify-content: center;*/
 
+    
     img{
         float:left;
         display: inline;
         margin: 0;
+        max-height: 4em;
     }
 
     .hamburger{
         display:flex;
 
+    }
+
+    .header_number{
+        float: right;
+        font-size: 3em;
+        font-weight: bold;
+        margin-left: auto;
+        @media #{$md} {
+            font-size: 2em;
+        }
+        @media #{$sm} {
+            font-size: 1.6em;
+        }  
     }
 }
 
@@ -213,13 +233,14 @@ $hamburgerThickness: $borderThickness;
         flex-grow:1;
         flex-shrink:1;
         width:20%;
-
+        height: 10vw;
         padding:12px;
 
         
 
         @media #{$xl} {
             width:20%;
+            height: 15vw;
             &:nth-child(4n+1) {  
                 padding-left: 0px;
             }
@@ -230,6 +251,7 @@ $hamburgerThickness: $borderThickness;
         } 
         @media #{$lg} {
             width:20%;
+            height: 20vw;
             &:nth-child(4n+1) {  
                 padding-left: 0px;
             }
@@ -240,7 +262,7 @@ $hamburgerThickness: $borderThickness;
         } 
         @media #{$md} {
             width:28%;
-
+            height: 28vw;
             &:nth-child(3n+1) {  
                 padding-left: 0px;
             }
@@ -253,7 +275,7 @@ $hamburgerThickness: $borderThickness;
 
         @media #{$sm} {
             width:40%;
-            
+            height: 40vw;
 
             &:nth-child(odd) {  
                 padding-left: 0px;
@@ -269,9 +291,12 @@ $hamburgerThickness: $borderThickness;
             font-size: 0em;
             display: block;
             width: 100%;
+            height: 100%;
 
             img{
+                height: 100%;
                 width: 100%;
+                object-fit: cover;
             }
         }
 
@@ -328,15 +353,17 @@ $hamburgerThickness: $borderThickness;
         flex-direction: row;
         
         .item {
+
             flex-grow:1;
             flex-shrink:1;
-
             width:20%;
-            padding:12px; 
-    
+
+            padding:12px;
+
+            
+
             @media #{$xl} {
                 width:20%;
-
                 &:nth-child(4n+1) {  
                     padding-left: 0px;
                 }
@@ -345,35 +372,33 @@ $hamburgerThickness: $borderThickness;
                     padding-right:0px;
                 }
             } 
-    
             @media #{$lg} {
-                width:40%;
-
-                &:nth-child(odd) {  
+                width:20%;
+                &:nth-child(4n+1) {  
                     padding-left: 0px;
                 }
         
-                &:nth-child(even){
+                &:nth-child(4n){
                     padding-right:0px;
                 }
             } 
             @media #{$md} {
-                width:40%;
-    
-                &:nth-child(odd) {  
+                width:28%;
+
+                &:nth-child(3n+1) {  
                     padding-left: 0px;
                 }
         
-                &:nth-child(even){
+                &:nth-child(3n){
                     padding-right:0px;
                 }
             } 
-    
-    
+
+
             @media #{$sm} {
                 width:40%;
                 
-    
+
                 &:nth-child(odd) {  
                     padding-left: 0px;
                 }
@@ -397,6 +422,7 @@ $hamburgerThickness: $borderThickness;
 
             p{
                 font-size: 1.3em;
+                padding-top:.2em;
             }
     
         }
@@ -456,8 +482,7 @@ $hamburgerThickness: $borderThickness;
 
     display: none;
     flex-wrap: wrap;
-    margin-left: 3vw;
-    margin-right: 3vw;
+    margin: 0 auto;
 
     .item {
         width: 50%;
@@ -465,18 +490,28 @@ $hamburgerThickness: $borderThickness;
         overflow: hidden;
     }
 
+
+
+
     @media #{$xl} { 
-        font-size: 2.8em;
+        font-size: 1.8em;
+        width:70%;
     } 
     @media #{$lg} { 
         font-size: 1.8em;
+        width: 100%;
     } 
     @media #{$md} { 
         font-size: 1.2em;
+        font-size: 3em;
+        width: 100%;
     } 
     @media #{$sm} { 
         font-size: 1em;
+        width: 100%;
     }
+
+
 
 
 }
