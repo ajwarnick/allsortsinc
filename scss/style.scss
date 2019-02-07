@@ -19,7 +19,8 @@ $tablet: "(min-width: 768px) and (max-width: 1023px)";
 $desktop: "(min-width: 1024px)";
 */
 
-$sm: "(max-width: 599px)";
+$xs: "(max-width: 299px)";
+$sm: "(min-width: 300px) and (max-width: 599px)";
 $md: "(min-width: 600px) and (max-width: 900px)";
 $lg: "(min-width: 901px) and (max-width: 1399px)";
 $xl: "(min-width: 1400px)";
@@ -95,7 +96,7 @@ p{
 .nav_bar{
     
     z-index: 1000;
-    padding: 15px;
+    padding: 3vw 3vw 0vw 3vw;
     height: 7vh; // for test
     background-color: $backgroundColor;
     position: sticky;
@@ -106,6 +107,16 @@ p{
     /* flex-direction: column;*/
     align-items: center; 
     /* justify-content: center;*/
+
+    @media #{$md} {
+        padding: 3vw 3vw 0vw 3vw;
+    }
+    @media #{$sm} {
+        padding: 7vw 3vw 3vw 3vw;
+    } 
+    @media #{$xs} {
+        padding: 7vw 3vw 3vw 3vw;
+    }
 
     
     img{
@@ -132,6 +143,9 @@ p{
         @media #{$sm} {
             font-size: 1.6em;
         }  
+        @media #{$xs} {
+            font-size: 1.2em;
+        }
     }
 }
 
@@ -196,6 +210,9 @@ $hamburgerThickness: $borderThickness;
     @media #{$sm} {
         font-size: 3em;
     }
+    @media #{$xs} {
+        font-size: 3em;
+    }
 
 }
 
@@ -228,7 +245,10 @@ $hamburgerThickness: $borderThickness;
         width: 100%;
         font-size: 2em;
     }
-
+    @media #{$xs} {
+        width: 100%;
+        font-size: 2em;
+    }
     
 
     .item {
@@ -290,6 +310,20 @@ $hamburgerThickness: $borderThickness;
                 padding-right:0px;
             }
         }
+
+
+        @media #{$xs} {
+            width:40%;
+            height: 40vw;
+
+            &:nth-child(odd) {  
+                padding-left: 0px;
+            }
+    
+            &:nth-child(even){
+                padding-right:0px;
+            }
+        }
         
 
         .img_link{
@@ -326,6 +360,9 @@ $hamburgerThickness: $borderThickness;
     @media #{$sm} { 
         width: 100%;
     }
+    @media #{$xs} { 
+        width: 100%;
+    }
 
     .blocktitle{
         width: 100%;
@@ -341,6 +378,9 @@ $hamburgerThickness: $borderThickness;
         @media #{$sm} { 
             font-size: 2em;
         }
+        @media #{$xs} { 
+            font-size: 2em;
+        }
     }
 
     .pad{
@@ -349,6 +389,10 @@ $hamburgerThickness: $borderThickness;
         @media #{$sm} { 
             font-size: 1.2em;
         }
+        @media #{$xs} { 
+            font-size: 1.2em;
+        }
+
     }
 
     .blockitems{
@@ -401,6 +445,20 @@ $hamburgerThickness: $borderThickness;
 
 
             @media #{$sm} {
+                width:40%;
+                
+
+                &:nth-child(odd) {  
+                    padding-left: 0px;
+                }
+        
+                &:nth-child(even){
+                    padding-right:0px;
+                }
+            }
+
+
+            @media #{$xs} {
                 width:40%;
                 
 
@@ -469,6 +527,10 @@ $hamburgerThickness: $borderThickness;
             font-size: 1.8em; 
             margin: 0 13vw 1vh 13vw;
         }
+        @media #{$xs} {
+            font-size: 1.8em; 
+            margin: 0 13vw 1vh 13vw;
+        }
     }
 }
 
@@ -515,10 +577,10 @@ $hamburgerThickness: $borderThickness;
         font-size: 1em;
         width: 100%;
     }
-
-
-
-
+    @media #{$xs} { 
+        font-size: 1em;
+        width: 100%;
+    }
 }
 
 .open{

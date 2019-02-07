@@ -1,5 +1,9 @@
 import offcanvas from './_off-canvas';
 import GLightbox from '../node_modules/glightbox/dist/js/glightbox'
+import Cookies from "../node_modules/js-cookie/src/js.cookie.js";
+
+// Cookie Value Set
+Cookies.set('name', 'value 33');
 
 var main_OffCanvas = offcanvas();
 
@@ -45,6 +49,11 @@ var main_triggers = (function() {
         let trggr = element;
         element.addEventListener("click", function(element){ 
             trggr.parentNode.classList.toggle("open");
+
+            //Cookie value read
+            console.log(Cookies.get('name'));
       }); 
     }); 
+
+    
 }());

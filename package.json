@@ -19,6 +19,7 @@
   "homepage": "https://github.com/ajwarnick/allsortsinc#readme",
   "dependencies": {
     "glightbox": "^1.0.9",
+    "js-cookie": "^2.2.0",
     "parcel-bundler": "^1.10.3"
   },
   "devDependencies": {
